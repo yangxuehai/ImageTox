@@ -1,0 +1,60 @@
+{
+    "MetaTitle": "字符画、图片、照片、相片在线生成及制作工具 - imageTox.com",
+    "MetaDescription": "在线生成制作字符画及字母组成的图片及照片，包括彩色及黑白照片，让照片更精彩 - imageTox.com",
+    "MetaKeyword": "字符画,字符图片,字符照片,字符相片,在线生成,在线制作,免费字符画,在线生成字符画,在线生成字符图片,在线字符生成照片",
+    "MetaUrl": "http://imageTox.com/zh/character-picture/",
+
+    "TopBannerTitle": "生成字符图片",
+    "TopBannerText": "你可以输入各类字符用以生成字符图片，高级选项可以让图片更加出彩！",
+
+    "ShowLanguage": "中文",
+    "Contact": "联系",
+    "ContactContent": "如果您在使用imageTox过程中发现任何问题或者有好的建议以及商务合作，请直接发邮件联系我们:",
+
+    "DefaultCharater": "中国加油",
+    "CharaterHolder": "请输入图像字符",
+    "ChooseFile": "请选择照片(jpg;jpeg;png)",
+    "FontType": "字体样式",
+    "FontSize": "字体大小",
+    "Enhance": "增强效果",
+    "AdvancedOption": "高级选项",
+    "EnhanceEffect": "颜色反转",
+    "WordSpace": "字符间距",
+    "LineSpace": "行间距",
+    "PhotoStyle": "图片风格",
+    "BlackWhite": "黑白",
+    "Colorful": "彩色",
+    "Saturation": "饱和度",
+    "Brightness": "亮度",
+    "Contrast": "对比度",
+    "Sharpness": "锐度",
+    "SubmitButton": "开始制作",
+    "iSumiting": "制作中...",
+
+    "LongTextButtonTip": "长文本(文章)录入及设置",
+    "LongTextBoxTitle": "长文本(文章)录入",
+    "LongTextBox": "",
+    "LongContentPlaceholder": "请输入或粘贴长文本",
+    "LongTextCircle": "文本循环显示(字数少时建议使用)",
+
+    # Box and Information
+    "ErrorBoxTitle": "系统提示",
+    "BoxClose": "关闭",
+    "BoxSave": "保存",
+    "BoxSaveClose": "保存并关闭",
+    "BoxClear": "清空",
+
+    "UploadFileEmpty": "请选择照片文件！",
+    "UploadFileSize": "您选择的照片文件太大。照片尺寸限制:",
+    "UploadFileType": "照片格式不正确。格式要求:",
+
+    "PhotoBar1": "效果图", 
+    "PhotoBar2": "左右对比查看", 
+    "PhotoBar3": "上下对比查看", 
+    "PhotoBar4": "原图", 
+    "PhotoBar5": "保存图片", 
+    "PhotoBar6": "分享图片", 
+    "PhotoBar7": "收起图片", 
+    "PhotoBar8": "展开图片", 
+    
+}

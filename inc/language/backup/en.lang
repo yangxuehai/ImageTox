@@ -1,0 +1,60 @@
+{
+    "MetaTitle": "",
+    "MetaDescription": "",
+    "MetaKeyword": "",
+    "MetaUrl": "http://imageTox.com/en/character-picture/",
+
+    "TopBannerTitle": "Make Character Picture",
+    "TopBannerText": "",
+
+    "ShowLanguage": "English",
+    "Contact": "Contact",
+    "ContactContent": "If you have any problems or suggestions and business cooperation, please contact us by email:",
+
+    "DefaultCharater": "Fight!",
+    "CharaterHolder": "please input Character for photo",
+    "ChooseFile": "Choose photo(jpg;jpeg;png)",
+    "FontType": "Font Type",
+    "FontSize": "Font Size",
+    "Enhance": "Enhance",
+    "AdvancedOption": "Advanced Option",
+    "EnhanceEffect": "Color inversion",
+    "WordSpace": "Word Space",
+    "LineSpace": "Line Space",
+    "PhotoStyle": "Photo Style",
+    "BlackWhite": "Black & White",
+    "Colorful": "Colorful",
+    "Saturation": "Saturation",
+    "Brightness": "Brightness",
+    "Contrast": "Contrast",
+    "Sharpness": "Sharpness",
+    "SubmitButton": "Make It Now",
+    "iSumiting": "Making...",
+
+    "LongTextButtonTip": "Long text and setting",
+    "LongTextBoxTitle": "Long text(article) input",
+    "LongTextBox": "",
+    "LongContentPlaceholder": "Please input or paster long text",
+    "LongTextCircle": "Text circular display (less words recommended)",
+
+    # Box and Information
+    "ErrorBoxTitle": "System Notice",
+    "BoxClose": "Close",
+    "BoxSave": "Save",
+    "BoxSaveClose": "Save & Close",
+    "BoxClear": "Clear",
+
+    "UploadFileEmpty": "Please select a photo file！",
+    "UploadFileSize": "The photo you selected is too large.Photo Limit:",
+    "UploadFileType": "The photo type is incorrect.File format:",
+
+    "PhotoBar1": "Effect Picture",
+    "PhotoBar2": "Left and right contrast view",
+    "PhotoBar3": "View up and down contrast",
+    "PhotoBar4": "Original",
+    "PhotoBar5": "Save Picture",
+    "PhotoBar6": "Share Image",
+    "PhotoBar7": "Collapse picture",
+    "PhotoBar8": "Expand Image",
+    
+}

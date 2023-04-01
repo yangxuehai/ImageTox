@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>{{LANGUAGE_TEXT["MetaTitle"]}} - imageTox.com</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="robots" content="index,follow"/>
+	<meta name="googlebot" content="index,follow"/>
+	<meta name="description" content="{{LANGUAGE_TEXT['MetaDescription']}} - imageTox.com"/>
+	<meta name="keyword" content="{{LANGUAGE_TEXT['MetaKeyword']}},imageTox"/>
+	<meta name="twitter:card" content="summary"/>
+	<meta name="twitter:site" content="@ImageTox"/>
+	<meta property="og:url" content="{{UrlList[0]}}{{FormValue['uPic']}}"/>
+	<meta property="og:type" content="tools"/>
+	<meta property="og:title" content="{{LANGUAGE_TEXT['MetaTitle']}}"/>
+	<meta property="og:description" content="{{LANGUAGE_TEXT['MetaDescription']}}"/>
+	<meta property="og:image" content="{{FullOutImage}}"/>
+	<meta property="og:site_name" content="imageTox"/>
+    <link rel="alternate" hreflang="x-default" href="https://imageTox.com/en/character-picture/"/>
+    {%for iHref in UrlList[2]%}
+    {{iHref|safe}}{%endfor%}
+	<link rel="stylesheet" href="{{StaticDomain}}/css/bootstrap.min.css">
+	<link rel="stylesheet" href="{{StaticDomain}}/css/style.css">
+  	<link rel="stylesheet" href="{{StaticDomain}}/css/twentytwenty.css" type="text/css"/>
+	<link rel="icon" type="image/png" href="{{StaticDomain}}/image/favicon.png" />
+</head>
+<body>
+	<div class="bodyback" style=""></div>
+	<nav class="navbar navbar-main  navbar-transparent topMenuBar" id="navbar-main">
+	    <div class="container px-lg-0">
+	        <!-- Logo -->
+	        <div class="float-left d-block">
+		        <a class="navbar-brand mr-lg-5" href="{{UrlList[1]}}">
+		            <img alt="Home" src="/static/image/logo.png" id="navbar-logo" style="height: 50px;">
+		        </a>
+	    	</div>
+	        <!-- Navbar nav -->
+	        <div class="collapse navbar-collapse float-right" id="navbar-main-collapse">
+	            <ul class="navbar-nav align-items-lg-center ml-auto list-group-horizontal">
+	            	<li class="nav-item d-block">
+	                    <a class="nav-link" id="ContactMenu" data-toggle="modal" data-target="#ContactBox">{{LANGUAGE_TEXT["Contact"]}}</a>
+	                </li>
+	                <li class="nav-item dropdown dropdown-animate" data-toggle="hover">
+	                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{LANGUAGE_TEXT["ShowLanguage"]}}</a>
+	                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg dropdown-menu-arrow p-0" style="min-width: 400px">
+	                        <div class="dropdown-menu-links rounded-bottom delimiter-top p-0 langlist">
+	                            <div class="row">
+	                            	{{LangList|safe}}
+	                            </div>
+	                        </div>
+	                    </div>
+	                </li>
+	            </ul>
+	        </div>
+	    </div>
+	</nav>
+	<div class="container">
+			<div class="row">
+				<div class="jumbotron">
+					<h1 class="display-4">{{LANGUAGE_TEXT["TopBannerTitle"]}}</h1>
+					<p class="lead">{{LANGUAGE_TEXT["TopBannerText"]}}<button type="button" class="btn btn-danger submitbtnsm btn-sm" id="GotoMake">{{LANGUAGE_TEXT["SubmitButton"]}}</button></p>
+				</div>
+			</div>
+	</div>
+	<div class="container MainContainer">
+		<div class="row">
+			<div class="col-sm-12 OptionTitle" id="OptionTitle">
+				<div class="btn-group btn-group-toggle smallsvg" data-toggle="buttons" id='PhotoBar'>
+					<label class="btn btn-secondary active" title='{{LANGUAGE_TEXT["PhotoBar1"]}}'> <input type="radio" name="options" id="PreviewOption1" checked>
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layers"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+					</label>		  
+					<label class="btn btn-secondary"  title='{{LANGUAGE_TEXT["PhotoBar2"]}}'><input type="radio" name="options" id="PreviewOption2">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sidebar"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="3" x2="9" y2="21"></line></svg>
+					</label>  
+					<label class="btn btn-secondary"  title='{{LANGUAGE_TEXT["PhotoBar3"]}}'><input type="radio" name="options" id="PreviewOption3">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-credit-card"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+					</label>  
+					<label class="btn btn-secondary" title='{{LANGUAGE_TEXT["PhotoBar4"]}}'><input type="radio" name="options" id="PreviewOption4">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-image"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+					</label>  
+					<label class="btn btn-secondary" title='{{LANGUAGE_TEXT["PhotoBar5"]}}'><input type="radio" name="options" id="PreviewOption5">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-download"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+					</label>					
+				</div>
+				<div class="btn-group btn-group-toggle float-right smallsvg" data-toggle="collapse">
+					  <label class="btn btn-secondary" title='{{LANGUAGE_TEXT["PhotoBar6"]}}'><input type="radio" name="options" id="PreviewOption6">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-share-2"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+					</label>		
+
+				</div>
+			</div>
+		</div>
+		<form method="POST" enctype="multipart/form-data" action="/{{iLanguage}}{{AppUrl}}{{FormValue['uPic']}}">
+			<div class="row OptionBox">
+				<div class="col-md-7 col-sm-12 col-xl-9 photomain collapse show" id="collapsePhotoBox">
+					<div class="col-sm-12 photoshow" >
+						<div class="" id="PhotoShow1">
+							<img src="{{OutImage}}" alt='{{LANGUAGE_TEXT["PhotoBar1"]}} - imageTox.com'>
+						</div>
+						<div class="twentytwenty-container height0" id="PhotoShow2">
+				          <img src="{{OrgImage}}"  alt='{{LANGUAGE_TEXT["PhotoBar4"]}} - imageTox.com'/>
+				          <img src="{{OutImage}}"  alt='{{LANGUAGE_TEXT["PhotoBar1"]}} - imageTox.com'/>
+				        </div>
+
+						<div class="twentytwenty-container height0" id="PhotoShow3"  data-orientation="vertical">
+				          <img src="{{OrgImage}}"  alt='{{LANGUAGE_TEXT["PhotoBar4"]}} - imageTox.com'/>
+				          <img src="{{OutImage}}"  alt='{{LANGUAGE_TEXT["PhotoBar1"]}} - imageTox.com'/>
+				        </div>
+
+				        <div class="xhide" id="PhotoShow4">
+							<img src="{{OrgImage}}"  alt='{{LANGUAGE_TEXT["PhotoBar4"]}} - imageTox.com'/>
+						</div>
+						
+					</div>
+				</div>
+				<div class="col-md-5 col-sm-12 col-xl-3 sidebar" id="SideBar">
+					<div class="input-group mb-3">
+						<input type="text" class="form-control" placeholder="{{LANGUAGE_TEXT['CharaterHolder']}}" aria-label="{{LANGUAGE_TEXT['CharaterHolder']}}" aria-describedby="button-addon2"  value="{{FormValue['iCharacter']}}" name="iCharacter" id="iCharacter">
+						<div class="input-group-append">
+							<button class="btn btn-primary MoreText" type="button" id="LongTextBtn" title="{{LANGUAGE_TEXT['LongTextButtonTip']}}" data-toggle="modal" data-target="#LongTextBox">
+								<svg class="bi bi-file-text" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+								  <path fill-rule="evenodd" d="M4 1h8a2 2 0 012 2v10a2 2 0 01-2 2H4a2 2 0 01-2-2V3a2 2 0 012-2zm0 1a1 1 0 00-1 1v10a1 1 0 001 1h8a1 1 0 001-1V3a1 1 0 00-1-1H4z" clip-rule="evenodd"/>
+								  <path fill-rule="evenodd" d="M4.5 10.5A.5.5 0 015 10h3a.5.5 0 010 1H5a.5.5 0 01-.5-.5zm0-2A.5.5 0 015 8h6a.5.5 0 010 1H5a.5.5 0 01-.5-.5zm0-2A.5.5 0 015 6h6a.5.5 0 010 1H5a.5.5 0 01-.5-.5zm0-2A.5.5 0 015 4h6a.5.5 0 010 1H5a.5.5 0 01-.5-.5z" clip-rule="evenodd"/>
+								</svg>
+							</button>
+						</div>
+					</div>
+					<div class="form-group row">
+						<div class="col-sm-12">
+							<div class="custom-file col-sm-12">
+								<input type="file" class="custom-file-input" id="iFile" name="iFile">
+								<label class="custom-file-label" for="iFile">
+								{%if FormValue['iOrgFileName']=="" %}{{LANGUAGE_TEXT["ChooseFile"]}}{%else%}{{FormValue['iOrgFileName']}}{%endif%}
+							</label>
+							</div>
+
+						</div>
+					</div>
+					<div class="form-group row">
+					    <label for="inputEmail3" class="col-3 col-form-label">{{LANGUAGE_TEXT["FontType"]}}</label>
+					    <div class="col-4">
+					      <select class="form-control" name="iFont">
+								{% for i in FontList %}
+								{% if i.split(':')[1]==FormValue['iFont']%}<option value="{{ i.split(':')[1] }}" selected = "selected">{{ i.split(":")[0] }}</option>
+								{%else%}<option value="{{ i.split(':')[1] }}">{{ i.split(":")[0] }}</option>{%endif%}{%endfor%}
+							</select>
+					    </div>
+					    <label for="inputEmail3" class="col-3 col-form-label">{{LANGUAGE_TEXT["FontSize"]}}</label>
+					    <div class="col-2">
+					      <select class="form-control" name="iFontSize">
+					      		{% for i in range(2,73,2)%}
+					      		{% set xSelect="" %}{% if i==FormValue['iFontSize']%}{% set xSelect='selected="selected"' %}
+					      		{% endif %}<option value="{{i}}" {{xSelect|safe}}>{{i}}</option>{%endfor%}
+							</select>
+					    </div>
+					</div>
+					 <div class="col-sm-12 text-center AdvanceRow">
+					 	<span class="AdvancedTitle">{{LANGUAGE_TEXT["AdvancedOption"]}}</span>
+					 </div>
+					<fieldset class="form-group">
+					    <div class="row">
+					      <legend class="col-form-label col-3 pt-0">{{LANGUAGE_TEXT["PhotoStyle"]}}</legend>
+					      <div class="col-9">
+							<div class="form-check form-check-inline">
+								{%if FormValue['iPhotoStyle']==1 %}
+								{%set xRadio1="checked" %}
+								{%set xRadio2="" %}
+								{%else%}
+								{%set xRadio1="" %}
+								{%set xRadio2="checked" %}
+								{%endif%}
+							  <input class="form-check-input" type="radio" name="iPhotoStyle" id="inlineRadio1" value=1 {{xRadio1}}>
+							  <label class="form-check-label" for="inlineRadio1">{{LANGUAGE_TEXT["BlackWhite"]}}</label>
+							</div>
+							<div class="form-check form-check-inline" style="margin-left: 5px">
+							  <input class="form-check-input" type="radio" name="iPhotoStyle" id="inlineRadio2" value=2 {{xRadio2}}>
+							  <label class="form-check-label" for="inlineRadio2">{{LANGUAGE_TEXT["Colorful"]}}</label>
+							</div>
+					      </div>
+					    </div>
+					</fieldset>					
+					<div class="form-group row">
+					    <div class="col-3">{{LANGUAGE_TEXT["Enhance"]}}</div>
+					    <div class="col-9">
+					      <div class="form-check">
+				      		{%if FormValue['iEnhance']==1 %}
+							{%set xStatus="checked" %}
+							{%else%}
+							{%set xStatus="" %}
+							{%endif%}
+					        <input class="form-check-input" type="checkbox" id="gridCheck1" name="iEnhance" value=1 {{xStatus}}>
+					        <label class="form-check-label" for="gridCheck1">
+					          {{LANGUAGE_TEXT["EnhanceEffect"]}}
+					        </label>
+					      </div>
+					    </div>
+					</div>
+
+					<div class="form-group row">
+					    <label for="inputEmail3" class="col-3 col-form-label">{{LANGUAGE_TEXT["WordSpace"]}}</label>
+					    <div class="col-3">
+					      <select class="form-control" name="iWordSpace">
+					      		{% for i in range(-20,21)%}
+					      		{% set xSelect="" %}{% if i==FormValue['iWordSpace']%}{% set xSelect='selected="selected"' %}
+					      		{% endif %}<option value="{{i}}" {{xSelect|safe}}>{{i}}</option>{%endfor%}
+					     </select>
+					    </div>
+					    <label for="inputEmail3" class="col-3 col-form-label">{{LANGUAGE_TEXT["LineSpace"]}}</label>
+					    <div class="col-3">
+					      <select class="form-control" name="iLineSpace">
+					      		{% for i in range(-20,21)%}
+					      		{% set xSelect="" %}{% if i==FormValue['iLineSpace']%}{% set xSelect='selected="selected"' %}
+					      		{% endif %}<option value="{{i}}" {{xSelect}}>{{i}}</option>{%endfor%}
+					      </select>
+					    </div>			    
+					</div>
+					<div class="form-group row">
+					    <div class="col-3"><label for="customRange3">{{LANGUAGE_TEXT["Saturation"]}}</label></div>
+					    <div class="col-9" style="display: inline-block;">
+					        <input type="range" class="custom-range" min="-100" max="100" step="1" id="customRange1" value="{{FormValue['iSaturation']}}" name="iSaturation"><span id="Range1" class="RangeNums">{{FormValue['iSaturation']}}</span>
+					     </div>
+					    <div class="col-3"><label for="customRange3">{{LANGUAGE_TEXT["Brightness"]}}</label></div>
+					    <div class="col-9">
+					        <input type="range" class="custom-range"  min="-100" max="100" step="1" id="customRange2" value="{{FormValue['iBrightness']}}" name="iBrightness"><span id="Range2" class="RangeNums">{{FormValue['iBrightness']}}</span>
+					     </div>
+					    <div class="col-3"><label for="customRange3">{{LANGUAGE_TEXT["Contrast"]}}</label></div>
+					    <div class="col-9">
+					        <input type="range" class="custom-range" min="-100" max="100" step="1"  id="customRange3" value="{{FormValue['iContrast']}}" name="iContrast"><span id="Range3" class="RangeNums">{{FormValue['iContrast']}}</span>
+					     </div>		
+					    <div class="col-3"><label for="customRange3">{{LANGUAGE_TEXT["Sharpness"]}}</label></div>
+					    <div class="col-9">
+					        <input type="range" class="custom-range" min="-100" max="100" step="1" id="customRange4" value="{{FormValue['iSharpness']}}" name="iSharpness"><span id="Range4" class="RangeNums">{{FormValue['iSharpness']}}</span>
+					     </div>
+					     <div class="col-12">
+							<button class="btn btn-danger btn-block submitbtn" type="submit" name="iSubmit" value="oSubmit" id="iSubmit">{{LANGUAGE_TEXT["SubmitButton"]}}</button>	
+						</div>     	     			     
+					 </div>
+					</div>			
+				</div>
+			</div>
+			<input type="hidden" name="iTest" id="iTest" value="{{FormValue['iTest']}}">
+			<input type="hidden" name="uPic" id="uPic" value="{{FormValue['uPic']}}">
+
+			{%if not FormValue['iOrgFileName']=="" %}
+			<input type="hidden" name="iOrgFileName" value="{{FormValue['iOrgFileName']}}">
+			{%endif%}
+
+			<!-- LongText Modal Box-->
+			<div class="modal fade" id="LongTextBox" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="LongTextBoxLabel" aria-hidden="true">
+			  <div class="modal-dialog modal-lg" role="document">
+			    <div class="modal-content">
+			      <div class="modal-header gradientTitle">
+			        <h5 class="modal-title w-100 text-center" id="LongTextBoxLabel">{{LANGUAGE_TEXT['LongTextBoxTitle']}}</h5>
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			          <span aria-hidden="true">&times;</span>
+			        </button>
+			      </div>
+			      <div class="modal-body">
+			          <div class="form-group">
+					    <textarea class="form-control" id="LongTextAreaText" rows="14" placeholder="{{LANGUAGE_TEXT['LongContentPlaceholder']}}">{{FormValue['iCharacter']}}</textarea>
+					  </div>
+					  	<div class="form-group row">
+					    <div class="col-sm-12">
+					      <div class="form-check">
+				      		{%if FormValue['iLongTextCircle']==1 %}
+							{%set xStatus="checked" %}
+							{%else%}
+							{%set xStatus="" %}
+							{%endif%}
+					        <input class="form-check-input" type="checkbox" id="iLongTextCircle" name="iLongTextCircle" value=1 {{xStatus}}>
+					        <label class="form-check-label" for="gridCheck1">
+					          {{LANGUAGE_TEXT["LongTextCircle"]}}
+					        </label>
+					      </div>
+					    </div>
+					</div>
+			      </div>
+			      <div class="modal-footer">
+			      	<button type="button" class="btn btn-secondary" id="BoxClear">{{LANGUAGE_TEXT["BoxClear"]}}</button>
+			        <button type="button" class="btn btn-primary" data-dismiss="modal" id="BoxSaveClose">{{LANGUAGE_TEXT["BoxSaveClose"]}}</button>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+
+		</form>
+	</div>
+	<div class="container">
+			<div class="row">
+				<div class="bottom float-none col-12">
+					<p class="text-center copyright">imageTox.com 2020 Copyright</p>
+				</div>
+			</div>
+	</div>
+
+	<script src="{{StaticDomain}}/js/jquery-3.4.1.min.js"></script>
+	<script src="{{StaticDomain}}/js/popper.min.js"></script>
+	<script src="{{StaticDomain}}/js/bootstrap.min.js"></script>
+	<script src="{{StaticDomain}}/js/bs-custom-file-input.min.js"></script>
+	<script src="{{StaticDomain}}/js/jquery.event.move.js"></script>
+    <script src="{{StaticDomain}}/js/jquery.twentytwenty.js"></script>
+    <script>
+    $(function(){
+      $(".twentytwenty-container[data-orientation!='vertical']").twentytwenty({default_offset_pct: 0.7});
+      $(".twentytwenty-container[data-orientation='vertical']").twentytwenty({default_offset_pct: 0.3, orientation: 'vertical'});
+    });
+    
+    $("#iSubmit").click(function(e) {
+    if ($("#iCharacter").val().trim()==""){
+      alert("{{LANGUAGE_TEXT['CharaterHolder']}}");
+      $("#iCharacter").focus();
+      return false;
+    }
+    if ($("#iFile").val().trim()=="" && $("#iTest").val()=="") {
+      alert("{{LANGUAGE_TEXT['ChooseFile']}}");
+      $("#iFile").focus();
+      return false;
+    }
+    $("#iSubmit").addClass('disabled');
+    $("#iSubmit").text('{{LANGUAGE_TEXT["iSumiting"]}}')
+  	});
+
+  	$("#OptionTitle").click(function(e){
+	    var obj=$(e.target).attr('id');
+	    var pos=obj.substr(obj.length-1,1);
+	    if(pos==5){
+	      var link = document.createElement('a');
+	      link.href = '{{OutImage}}';  // use realtive url 
+	      link.download = '';
+	      document.body.appendChild(link);
+	      link.click();     
+	      return;
+	    };  
+	    if(pos==6){
+	      $("#ShareBox").modal('show');
+	      return;
+	    };  
+	    for(i=1;i<=4;i++){
+	      if(i==1||i==4){
+	        $(("#PhotoShow"+i)).hide();
+	      };
+	      if(i==2||i==3){
+	        $(("#PhotoShow"+i)).addClass("height0");
+	      };
+	    };
+	    if(pos==1||pos==4){
+	      $(("#PhotoShow"+pos)).show();
+	    };
+	    if(pos==2||pos==3){
+	      $(("#PhotoShow"+pos)).removeClass("height0");
+	    };
+
+	  });
+    </script>
+	{%if not ErrorInfo=="" %}
+	<!-- Error Information -->
+	<div class="modal fade" id="ErrorModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	  <div class="modal-dialog modal-dialog-centered" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header gradientTitle">
+	        <h5 class="modal-title" id="exampleModalCenterTitle">{{LANGUAGE_TEXT["ErrorBoxTitle"]}}</h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+	      <div class="modal-body">
+	      	<div class="alert alert-warning" role="alert">
+	  			 {{ErrorInfo}}
+			</div>
+	       
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-warning" data-dismiss="modal">{{LANGUAGE_TEXT["BoxClose"]}}</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	<script type="text/javascript">
+		$('#ErrorModal').modal('show');
+	</script>
+	{%endif%}
+
+	<!-- Contact Modal Box-->
+	<div class="modal fade " id="ContactBox" tabindex="-1" role="dialog" aria-labelledby="ContactBoxLabel" aria-hidden="true">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header gradientTitle">
+	        <h5 class="modal-title" id="ContactBoxLabel">{{LANGUAGE_TEXT["Contact"]}}</h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+	      <div class="modal-body">
+	        {{LANGUAGE_TEXT["ContactContent"]}}<div class="alert alert-warning" role="alert" style="margin-top:15px; "><a href="mailto:imageTox@gmail.com" class="text-info">imageTox@gmail.com</a></div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+	<!-- Share Modal Box-->
+	<div class="modal fade " id="ShareBox" tabindex="-1" role="dialog" aria-labelledby="ShareBoxLabel" aria-hidden="true">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header gradientTitle">
+	        <h5 class="modal-title" id="ShareBoxLabel">{{LANGUAGE_TEXT["ShareBoxTitle"]}}</h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+	      <div class="modal-body">
+	      	<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5e87f6c78d2aedcf"></script>
+
+	        {%if iLanguage=="zh"%}<div class="addthis_inline_share_toolbox"></div>{%else%}<div class="addthis_inline_share_toolbox_sgmx"></div>{%endif%}
+            
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-warning" data-dismiss="modal">{{LANGUAGE_TEXT["BoxClose"]}}</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+
+
+
+</body>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-162679071-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-162679071-1');
+</script>
+
+</html>

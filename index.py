@@ -1,7 +1,7 @@
 # coding:utf-8
 # Create by YASUR 2020-3-15
 # YANGXUEHAI@GMAIL.COM
-import zipfile, os, datetime, random, string, math, ast, sys, time, traceback
+import os, datetime, random, string, math, ast, sys, time, traceback
 from PIL import Image, ImageDraw, ImageFont, ImageEnhance, ImageOps, ExifTags
 from flask import Flask, render_template, url_for, request, redirect
 import numpy as np
@@ -16,6 +16,7 @@ SYS_LANG_LIST = LANGUAGE_CONFIG.keys()
 @app.route("/")
 def index():
     return redirect(url_for('CharacterPicture', cLang=GetRedirectLang("", SYS_LANG_LIST)))
+
 
 
 @app.route("/<path:cLang>/character-picture/", methods=['GET', 'POST'])

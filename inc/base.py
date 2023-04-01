@@ -2,12 +2,11 @@
 # 专用基础库
 # 2019.10.20 By Yasur
 
-import os, requests, re, random, pymysql, traceback, time, datetime,qrcode
+import os, requests, re, random, traceback, time, datetime,qrcode
 from PIL import Image, ImageDraw, ImageFont, ImageOps, ImageEnhance,ExifTags
-import zipfile
 from flask import Flask, render_template, url_for, request, redirect
 import numpy as np
-import math, jieba
+import math
 from inc.config import *
 import ast
 
@@ -96,13 +95,6 @@ def FileList(FileName):
     TempList = FileObj.read().split(",")
     FileObj.close()
     return TempList
-
-
-# 分词并输出都好风格的字符串，去重
-def FenCi(fcStr):
-    seg_list = jieba.lcut(fcStr, cut_all=False, HMM=True)
-    seg_list = list(set(seg_list))
-    return ",".join(seg_list)
 
 
 # FixNameFile
@@ -334,27 +326,6 @@ def IncludeZH(inStr):
             return True
     return False
 
-
-# 创建压缩文件,输入参数为原始文件名(带路径)、输出目录名，文件名标题
-def MakeZip(FileName, OutDir, FileTitle):
-    ZipFileName = FileTitle + RandomStr(12, "-") + ".zip"
-    with zipfile.ZipFile(OutDir + ZipFileName, 'w', zipfile.ZIP_DEFLATED) as zFile:
-        zFile.write(FileName, arcname=GetFullName(FileName))
-    return ZipFileName
-
-
-# 创建压缩文件夹,输入参数为原始文件名(带路径)、输出目录名，文件名标题
-def MakeDirZip(FileDir, OutDir, FileTitle):
-    FileNums = 0
-    ZipFileName = FileTitle + RandomStr(12, "_") + ".zip"
-    with zipfile.ZipFile(OutDir + ZipFileName, 'w') as zFile:
-        for DirPath, DirNames, FileNames in os.walk(FileDir):
-            fPath = DirPath.replace(FileDir, '')
-            fPath = fPath and fPath + os.sep or ''
-            for FileName in FileNames:
-                zFile.write(os.path.join(DirPath, FileName), fPath + FileName)
-                FileNums += 1
-    return ZipFileName, FileNums, FileNames
 
 
 # 获取文本内网址,输入参数为字符串，返回URL列表
